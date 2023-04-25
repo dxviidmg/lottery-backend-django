@@ -5,6 +5,5 @@ from django.db.models import F
 from random import random
 
 class CardViewSet(viewsets.ModelViewSet):
-#    queryset = Card.objects.annotate(random_order=F('pk')*random()).order_by('random_order')
-    queryset = Card.objects.all()
+    queryset = Card.objects.order_by('?')
     serializer_class = CardSerializer
